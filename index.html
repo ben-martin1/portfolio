@@ -39,8 +39,8 @@
             <h1 class="md:text-4xl slideLeft montserrat-head">Ben Martin</h1>
             <h2 class="slowFadeIn ">The Dynamic Problem Solver</h2>
             <div class="flex flex-col md:flex-row justify-center mx-20 flex-1">
-                <div class="flex justify-center">
-                    <div class="invisible p-[.125rem] shadow-md shadow-red-400 max-w-[304px] min-w-[304px] max-h-[404px] min-h-[404px] display:block bg-gradient-to-r from-indigo-300 via-purple-300 via-78% to-pink-300 to-100% background-animate-q rounded-lg slideFade" style="animation-delay: 2s; animation-fill-mode: forwards;">
+                <div class="flex justify-center ">
+                    <div class="invisible p-[.125rem] shadow-md shadow-red-400 max-w-[304px] min-w-[304px] max-h-[404px] min-h-[404px] h-[404px] display:block bg-gradient-to-r from-indigo-300 via-purple-300 via-78% to-pink-300 to-100% background-animate-q rounded-lg slideFade" style="animation-delay: 2s; animation-fill-mode: forwards;">
                         <img src="./icons/img/Ben Martin Headshot Resized.jpg" class="rounded-lg snap-center"  height="300px" width="300px">
                     </div>
                 </div>
@@ -61,9 +61,7 @@
                         <h1 class="invisible text-center slideFade" style="animation-delay: 4s; animation-fill-mode: forwards;">Some of my favorite technologies</h1>
                         <div class="flex-wrap flex justify-around mx-3 ">
                             <template x-for="technology in technologies" :key="technology.id">
-                                <div class="">
                                     <img class="bg-white/40 rounded-full mt-4 pureFade h-[50px] min-h-[50px] w-[50px] min-w-[50px] mx-3 p-1 " :alt="technology.name" :src="technology.icon">
-                                </div>
                             </template>
                         </div>
                     </div>
