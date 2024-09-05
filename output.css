@@ -1153,11 +1153,27 @@ video {
   .xl\:pt-16 {
     padding-top: 4rem;
   }
+
+  .xl\:text-left {
+    text-align: left;
+  }
+
+  .xl\:text-right {
+    text-align: right;
+  }
 }
 
 @media (min-width: 1536px) {
   .\32xl\:mt-12 {
     margin-top: 3rem;
+  }
+
+  .\32xl\:mb-24 {
+    margin-bottom: 6rem;
+  }
+
+  .\32xl\:flex {
+    display: flex;
   }
 
   .\32xl\:h-\[600px\] {
@@ -1170,6 +1186,18 @@ video {
 
   .\32xl\:h-\[804px\] {
     height: 804px;
+  }
+
+  .\32xl\:h-\[25\%\] {
+    height: 25%;
+  }
+
+  .\32xl\:h-\[33\%\] {
+    height: 33%;
+  }
+
+  .\32xl\:h-\[66\%\] {
+    height: 66%;
   }
 
   .\32xl\:max-h-\[804px\] {
@@ -1206,6 +1234,38 @@ video {
 
   .\32xl\:max-w-\[600px\] {
     max-width: 600px;
+  }
+
+  .\32xl\:flex-col {
+    flex-direction: column;
+  }
+
+  .\32xl\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .\32xl\:justify-end {
+    justify-content: flex-end;
+  }
+
+  .\32xl\:justify-center {
+    justify-content: center;
+  }
+
+  .\32xl\:justify-around {
+    justify-content: space-around;
+  }
+
+  .\32xl\:justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  .\32xl\:border-b-\[1px\] {
+    border-bottom-width: 1px;
+  }
+
+  .\32xl\:border-purple-600\/20 {
+    border-color: rgb(147 51 234 / 0.2);
   }
 
   .\32xl\:px-12 {
@@ -1246,5 +1306,13 @@ video {
 
   .\32xl\:pt-8 {
     padding-top: 2rem;
+  }
+
+  .\32xl\:pb-24 {
+    padding-bottom: 6rem;
+  }
+
+  .\32xl\:text-center {
+    text-align: center;
   }
 }
