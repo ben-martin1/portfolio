@@ -13,7 +13,7 @@
 </head>
 <body class="flex flex-col md:h-screen m-0 text-white bg-fixed shad
             bg-gradient-to-tl from-indigo-950 via-pink-950 via-10% to-purple-950 to-100% background-animate"
-        x-data="{ scrollOpacity : '' }" @scroll.window.throttle = "if (window.scrollY > 100) {scrollOpacity = 'scrollOpacity';} else {scrollOpacity = ''}">
+        x-data="{ scrollOpacity : '' }" @scroll.window.throttle.100ms = "if (window.scrollY > 100) {scrollOpacity = 'scrollOpacity';} else {scrollOpacity = ''}">
     <header class="text-white/70 flex justify-around items-center sticky top-0 z-50 pb-1 border-b-[1px] border-b-purple-600/40" :class="scrollOpacity">
         <nav>
             <a class="flex items-center hover:underline hoverGrow" href="./index.html">
@@ -59,7 +59,7 @@
                     ]
                 }"> 
                         <h1 class="invisible text-center slideFade" style="animation-delay: 4s; animation-fill-mode: forwards;">Some of my favorite technologies</h1>
-                        <div class="flex justify-around mx-3 flex-wrap">
+                        <div class="flex-wrap flex justify-around mx-3 ">
                             <template x-for="technology in technologies" :key="technology.id">
                                 <div class="">
                                     <img class="bg-white/40 rounded-full mt-4 pureFade h-[50px] min-h-[50px] w-[50px] min-w-[50px] mx-3 p-1 " :alt="technology.name" :src="technology.icon">
