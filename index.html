@@ -13,7 +13,7 @@
 </head>
 <body class="flex flex-col md:h-screen m-0 text-white bg-fixed shad
             bg-gradient-to-tl from-indigo-950 via-pink-950 via-10% to-purple-950 to-100% background-animate"
-        x-data="{ scrollOpacity : '' }" @scroll.window.throttle = "if (window.scrollY > ) {scrollOpacity = 'scrollOpacity';} else {scrollOpacity = ''}">
+        x-data="{ scrollOpacity : '' }" @scroll.window.throttle = "if (window.scrollY > 100) {scrollOpacity = 'scrollOpacity';} else {scrollOpacity = ''}">
     <header class="text-white/70 flex justify-around items-center sticky top-0 z-50 pb-1 border-b-[1px] border-b-purple-600/40" :class="scrollOpacity">
         <nav>
             <a class="flex items-center hover:underline hoverGrow" href="./index.html">
