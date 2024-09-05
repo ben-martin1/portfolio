@@ -1149,6 +1149,10 @@ video {
   .xl\:max-w-\[404px\] {
     max-width: 404px;
   }
+
+  .xl\:pt-16 {
+    padding-top: 4rem;
+  }
 }
 
 @media (min-width: 1536px) {
@@ -1238,5 +1242,9 @@ video {
 
   .\32xl\:pt-16 {
     padding-top: 4rem;
+  }
+
+  .\32xl\:pt-8 {
+    padding-top: 2rem;
   }
 }
