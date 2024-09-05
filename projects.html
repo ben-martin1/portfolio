@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="h-screen">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="/src/output.css" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+<body class="flex flex-col md:h-screen m-0 text-white bg-fixed
+            bg-gradient-to-tl from-indigo-950 via-pink-950 via-10% to-purple-950 to-100% background-animate"
+            x-data="{ scrollOpacity : '' }" @scroll.window.throttle.100ms = "if (window.scrollY > 100) {scrollOpacity = 'scrollOpacity';} else {scrollOpacity = ''}">
+    <header class="text-white/70 flex justify-around items-center sticky top-0 z-50 pb-1 border-b-[1px] border-b-purple-600/40" :class="scrollOpacity">
+        <nav>
+            <a class="flex items-center hover:underline hoverGrow" href="./index.html">
+                <img src="/src/icons/icon_house_white.png">
+                <div>Home</div>
+            </a>
+        </nav>
+        <nav class="flex items-center">
+            <a class="flex items-center hover:underline hoverGrow" href="./projects.html">
+                <img src="/src/icons/icon_pencil_white.png">
+                <div class="pl-1">Projects</div>
+            </a>
+        </nav>
+        <nav class="flex items-center">
+            <a class="flex items-center hover:underline hoverGrow" href="./contact.html">
+                <img src="/src/icons/icon_contact_white.png">
+                <div>Contact</div>
+            </a>
+        </nav>
+    </header>
+    <div class="p-4 md:h-24 " x-data="">
+        <h1 class="invisible text-center md:text-4xl slideFade montserrat-head" style="animation-delay: 200ms; animation-fill-mode: forwards;">Selected Projects</h1>
+        <div class="invisible text-pretty md:px-16 md:mb-12 slideFade" style="animation-delay: 300ms; animation-fill-mode: forwards;">The reason I enjoy building is because I love problem solving. When evaluating a potential project, I think in terms of a real-world problem that needs fixing, and work on building a solution from there.</div>
+    </div>
+    <div class="flex flex-col-reverse h-full md:h-24 md:min-h-96 md:flex-row md:mx-6 md:pt-6" x-data="{ selected: false, open : false,
+        project_list: [{name:'Solar Power Search', link:'https://github.com/ben-martin1/rayrater', id:1},
+                    {name:'Talent Agency Management System', link:'https://github.com/ben-martin1/enterlinked', id:2},
+                    {name:'Online Multiplayer First Person Shooter Game', link:'https://github.com/ben-martin1/fallen-lands', id:3},
+                    {name:'This site', link:'link', id:4},
+                    ]}">
+        <div class="p-4 grow basis-0 border-purple-600/20 border-t-[1px] md:border-t-0 md:border-r-[1px] ">
+            <h2 class="invisible text-center mb-4 slideFade" style="animation-delay: 350ms; animation-fill-mode: forwards;">Project</h2>
+            <template x-for="project in project_list" :key="project.id">
+                <div class="flex min-h-9 items-center slideFade">
+                    <a :href="project.link" target="_blank"><img src="./icons/icons8-github-48.png" class="h-6 min-w-6 mx-2 "></a>
+                    <span class=" h-full w-full hoverGrow truncate hover:underline cursor-pointer" @click="selected=project; open=true;">
+                        <span class="pl-1" x-text="project.name"></span>
+                    </span>
+                </div>
+            </template>
+        </div>
+        <span class="p-4 grow basis-0 border-purple-600/20 border-t-[1px] md:border-t-0 md:border-r-[1px]" x-cloak x-show="open" x-transition:enter.duration.500ms>
+            <div class="flex justify-around">
+                <div></div>
+                <h2 class="text-center">About</h2>
+                <div class="underline hoverGrow cursor-pointer" x-show="open" x-transition:enter.duration.500ms x-transition:enter.delay.500ms  @click="open=false;">[x]</div>
+            </div>
+            <span x-show="selected.id==1" x-transition:enter.duration.550ms  >
+                <p class="text-pretty">This app allows for a user curious about the potential solar yield of a given property to see optimal solar panel placements for its roof. Users can search for a building, and see a list of panels, ordered by solar yield, as well as the coordinates and angle (pitch/yaw) for how to achieve the yield.</p>
+            </span>
+            <span x-show="selected.id==2" x-transition:enter.duration.550ms >
+                <p class="text-pretty">This app follows the basic functions of a management system for a talent agency, including keeping track of representatives and contact info.</p>
+                <p class="text-pretty">Instead of the industry standard of having the agency enter talent info directly, I built this system to have talent maintain ownership of their account, regardless of who is representing them.</p>
+            </span>
+            <span x-show="selected.id==3" x-transition:enter.duration.550ms >This is a test demo for a co-op FPS game. I built basic features such as movement, jumping, shooting, destructable objects, and a procedural weapon creation system. Data is synced over network for a peer-to-peer experience. The game was designed to be server-authoritative using RPCs in order to prevent potential cheating.</span>
+            <span x-show="selected.id==4" x-transition:enter.duration.550ms >As a student looking to transition into software development, many job applications ask about a portfolio site.</span>
+        </span>
+        <span class="p-4 md:grow md:basis-0 " x-cloak x-show="!open" x-transition:enter.scale.0 x-transition:enter.duration.1505ms>
+        </span>
+        <div class="p-4 border-purple-600/20 border-t-[1px] md:border-t-0 md:grow md:basis-0" x-cloak>
+            <h2 class="text-center mb-4 w-full " style="animation-fill-mode: forwards;"  x-show="!open" x-transition:enter.delay.0ms x-transition:enter.duration.1000ms x-transition:leave.delay.0ms x-transition:leave.duration.0ms>Select a project to learn more.</h2>
+            <span class="" x-show="open" x-transition:enter.duration.1001ms >
+                <h2 class="text-center" x-text="selected.name"></h2>
+                <span x-show="selected.id==1" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>I built this app using React to render the pages. For the location autocomplete, I used the Google Places API, which gives suggested complete addresses based on the user input. Once the user enters or selects a complete address, a call to the Google Solar API fetches placement data for the building.  </span>
+                <span x-show="selected.id==2" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>This was made using Django on the backend. The "batteries-included" design philosphy of Django makes account creation, password handling, and database queries a simple task. I also used Django's templating system to render pages.</span>
+                <span x-show="selected.id==3" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>I built this project using the Unity Game Engine, which abstracts many difficult problems such as physics and graphics rendering. For a networking solution, I used Unity's Netcode for Game Objects.</span>
+                <span x-show="selected.id==4" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>This website is made using Tailwind CSS and Alpine. I took the need to build this website as an excuse to learn both frameworks, as I had already learned React and vanilla CSS.<br>  Icons for this site were sourced from <a class="underline" href="https://icons8.com/">Icons8</a>, which graciously allowed me to use them for free in exchange for my linking to them.
+                </span>
+            </span>
+        </div>
+    </div> 
+    <footer class="text-purple-800 text-xs px-6 mt-4 md:mb-4 h-full w-full">
+        <div class="invisible slideFade align-text-bottom" style="animation-delay: 5s; animation-fill-mode: forwards;"> 
+            Designed by Ben Martin. Icons from <a href='https://icons8.com/'>icons8</a>
+        </div>
+    </footer>
+</body>
+</html>
+

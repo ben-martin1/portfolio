@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak]{
+    display:none !important;
+}
+
+.montserrat-head {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@keyframes pureFade {
+    from { 
+        background-color: rgba(255, 255, 255, 0); 
+        opacity: 0;
+        }
+    to { 
+        background-color: rgba(255, 255, 255, 0.4); 
+        opacity: 1;
+    }
+}
+@keyframes bgGradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 0%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    @keyframes slightGrow {
+        from { transform: scale(102%); }
+        to { transform: scale(100%); }
+    }
+    @keyframes slideInLeft {
+      from { transform: translateX(-10%); }
+      to { transform: translateX(0); }
+    }
+    @keyframes sideScroller {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(100%); }
+    }
+    @keyframes fadeIn{
+        from{
+            opacity: 0;
+            transform: translateY(2%);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0);
+            visibility: visible;
+        }
+    }
+    ::-moz-selection {
+      color: rgb(181, 61, 155);
+      background: black;
+    }
+    ::selection {
+      color: rgb(181, 61, 155);
+      background: black;
+    }
+    .background-animate {
+        background-size: 300%;
+        -webkit-animation: bgGradient 19s ease infinite;
+        -moz-animation: bgGradient 19s ease infinite;
+        animation: bgGradient 19s ease infinite;
+    }
+
+    .background-animate-q {
+        background-size: 400%;
+        -webkit-animation: bgGradient 4s ease infinite;
+        -moz-animation: bgGradient 4s ease infinite;
+        animation: bgGradient 4s ease infinite;
+    }
+
+    .slideLeft{
+        animation: slideInLeft 3s ease-in-out
+    }
+
+    .slideFade{
+        animation: fadeIn 2s ease-in
+    }
+
+    .hoverGrow:hover{
+        animation: slightGrow .4s ease-in-out;
+        color: white;
+    }
+    .slowFadeIn{
+        animation-delay: 21s;
+        animation: fadeIn 11s ease-in-out;
+    }
+    .scrollOpacity{
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .sideScroll{
+        animation: sideScroller 10s infinite none;
+    }
+    .pureFade{  
+        animation-fill-mode: forwards;
+        animation-delay: 100ms;
+        animation: pureFade 8s ease-out;
+    }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="h-screen">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="/src/output.css" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+<body class="flex flex-col h-screen m-0 text-white bg-fixed
+            bg-gradient-to-tl from-indigo-950 via-pink-950 via-10% to-purple-950 to-100% background-animate"
+        x-data="{ scrollOpacity : '' }" @scroll.window.throttle.100ms = "if (window.scrollY > 100) {scrollOpacity = 'scrollOpacity';} else {scrollOpacity = ''}">
+        <header class="text-white/70 flex justify-around items-center sticky top-0 z-50 pb-1 border-b-[1px] border-b-purple-600/40" :class="scrollOpacity">
+        <nav>
+            <a class="flex items-center hover:underline hoverGrow" href="./index.html">
+                <img src="/src/icons/icon_house_white.png">
+                <div>Home</div>
+            </a>
+        </nav>
+        <nav class="flex items-center">
+            <a class="flex items-center hover:underline hoverGrow" href="./projects.html">
+                <img src="/src/icons/icon_pencil_white.png">
+                <div class="pl-1">Projects</div>
+            </a>
+        </nav>
+        <nav class="flex items-center">
+            <a class="flex items-center hover:underline hoverGrow" href="./contact.html">
+                <img src="/src/icons/icon_contact_white.png">
+                <div>Contact</div>
+            </a>
+        </nav>
+    </header>
+    <section class="flex flex-col justify-between h-screen mx-6  slideFade">
+        <div class="flex flex-col h-full justify-around">
+            <div class="text-center">    
+                <h1 class="text-3xl montserrat-head">Contact</h1>
+                <span class="slideFade ">Feel free to connect.</span>
+            </div>
+            <div class="flex slideFade justify-center md:mx-60">
+                <a href="https://www.linkedin.com/in/ben-martin-834627228/" target="_blank"><img src="./icons/icon_linkedin_white.png"></a>
+                <a href="https://github.com/ben-martin1/" target="_blank"><img src="./icons/icon_github_white.png"></a>
+                <a href="mailto:ben.mclane.martin@gmail.com"><img class="slideFade" src="./icons/icon_mail_white.png"></a>
+            </div>
+            <span></span>
+        </div>
+        <footer class="text-purple-800 text-xs px-6 mt-4 md:mb-4 w-full">
+            <div class="invisible slideFade" style="animation-delay: 5s; animation-fill-mode: forwards;"> 
+                Designed by Ben Martin. Icons from <a href='https://icons8.com/'>icons8</a>
+            </div>
+        </footer>
+    </section>
+</body>
+</html>
+
