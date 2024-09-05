@@ -66,11 +66,10 @@
                 <p class="text-pretty">This app allows for a user curious about the potential solar yield of a given property to see optimal solar panel placements for its roof. Users can search for a building, and see a list of panels, ordered by solar yield, as well as the coordinates and angle (pitch/yaw) for how to achieve the yield.</p>
             </span>
             <span x-show="selected.id==2" x-transition:enter.duration.550ms >
-                <p class="text-pretty">This app follows the basic functions of a management system for a talent agency, including keeping track of representatives and contact info.</p>
-                <p class="text-pretty">Instead of the industry standard of having the agency enter talent info directly, I built this system to have talent maintain ownership of their account, regardless of who is representing them.</p>
+                <p class="text-pretty">This app follows the basic functions of a management system for a talent agency, including keeping track of representatives and contact info. <br> Instead of the industry standard of having the agency enter talent info directly, I built this system to have talent maintain ownership of their account, regardless of who is representing them.</p>
             </span>
             <span x-show="selected.id==3" x-transition:enter.duration.550ms >This is a test demo for a co-op FPS game. I built basic features such as movement, jumping, shooting, destructable objects, and a procedural weapon creation system. Data is synced over network for a peer-to-peer experience. The game was designed to be server-authoritative using RPCs in order to prevent potential cheating.</span>
-            <span x-show="selected.id==4" x-transition:enter.duration.550ms >As a student looking to transition into software development, many job applications ask about a portfolio site.</span>
+            <span x-show="selected.id==4" x-transition:enter.duration.550ms >As a student looking to transition into software development, many job applications ask about a portfolio site. I hope this helps move the needle towards a yes!</span>
         </span>
         <span class="p-4 md:grow md:basis-0 " x-cloak x-show="!open" x-transition:enter.scale.0 x-transition:enter.duration.1505ms>
         </span>
@@ -78,10 +77,10 @@
             <h2 class="text-center mb-4 w-full " style="animation-fill-mode: forwards;"  x-show="!open" x-transition:enter.delay.0ms x-transition:enter.duration.1000ms x-transition:leave.delay.0ms x-transition:leave.duration.0ms>Select a project to learn more.</h2>
             <span class="" x-show="open" x-transition:enter.duration.1001ms >
                 <h2 class="text-center" x-text="selected.name"></h2>
-                <span x-show="selected.id==1" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>I built this app using React to render the pages. For the location autocomplete, I used the Google Places API, which gives suggested complete addresses based on the user input. Once the user enters or selects a complete address, a call to the Google Solar API fetches placement data for the building.  </span>
+                <span x-show="selected.id==1" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>I built this app using React to render the pages. For the location autocomplete, I used the Google Places API, which gives suggested complete addresses based on the user input. Once the user enters or selects a complete address, a call to the Google Solar API fetches placement data for the building.</span>
                 <span x-show="selected.id==2" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>This was made using Django on the backend. The "batteries-included" design philosphy of Django makes account creation, password handling, and database queries a simple task. I also used Django's templating system to render pages.</span>
                 <span x-show="selected.id==3" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>I built this project using the Unity Game Engine, which abstracts many difficult problems such as physics and graphics rendering. For a networking solution, I used Unity's Netcode for Game Objects.</span>
-                <span x-show="selected.id==4" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>This website is made using Tailwind CSS and Alpine. I took the need to build this website as an excuse to learn both frameworks, as I had already learned React and vanilla CSS.<br>  Icons for this site were sourced from <a class="underline" href="https://icons8.com/">Icons8</a>, which graciously allowed me to use them for free in exchange for my linking to them.
+                <span x-show="selected.id==4" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>This website is made using Tailwind CSS and Alpine. I took the need to build this website as an excuse to learn both frameworks, as I had already learned React and vanilla CSS.<br>Icons for this site were sourced from <a class="underline" href="https://icons8.com/">Icons8</a>, which graciously allowed me to use them for free in exchange for my linking to them.
                 </span>
             </span>
         </div>
