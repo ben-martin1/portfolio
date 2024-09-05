@@ -1124,3 +1124,90 @@ video {
     line-height: 2.5rem;
   }
 }
+
+@media (min-width: 1024px) {
+  .lg\:pt-6 {
+    padding-top: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:pt-36 {
+    padding-top: 9rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:mx-48 {
+    margin-left: 12rem;
+    margin-right: 12rem;
+  }
+
+  .\32xl\:mb-24 {
+    margin-bottom: 6rem;
+  }
+
+  .\32xl\:mb-56 {
+    margin-bottom: 14rem;
+  }
+
+  .\32xl\:mt-6 {
+    margin-top: 1.5rem;
+  }
+
+  .\32xl\:mt-12 {
+    margin-top: 3rem;
+  }
+
+  .\32xl\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .\32xl\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .\32xl\:px-28 {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+
+  .\32xl\:px-48 {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+
+  .\32xl\:px-96 {
+    padding-left: 24rem;
+    padding-right: 24rem;
+  }
+
+  .\32xl\:px-24 {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .\32xl\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .\32xl\:px-72 {
+    padding-left: 18rem;
+    padding-right: 18rem;
+  }
+
+  .\32xl\:pt-36 {
+    padding-top: 9rem;
+  }
+
+  .\32xl\:pt-24 {
+    padding-top: 6rem;
+  }
+
+  .\32xl\:pt-32 {
+    padding-top: 8rem;
+  }
+}
