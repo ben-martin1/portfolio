@@ -56,10 +56,9 @@
                 </div>
             </template>
         </div>
-        <span class="p-4 grow basis-0 border-purple-600/20 border-t-[1px] md:border-t-0 md:border-r-[1px]" x-cloak x-show="open" x-transition:enter.duration.500ms>
+        <span class="p-4 grow basis-0 border-purple-600/20 border-t-[1px] md:border-t-0 md:border-r-[1px] h-full" x-cloak x-show="open" x-transition:enter.duration.500ms>
             <div class="flex justify-around">
-                <div></div>
-                <h2 class="text-center">About</h2>
+                <h2 class="text-center basis-1 grow">About</h2>
                 <div class="underline hoverGrow cursor-pointer" x-show="open" x-transition:enter.duration.500ms x-transition:enter.delay.500ms  @click="open=false;">[x]</div>
             </div>
             <span x-show="selected.id==1" x-transition:enter.duration.550ms  >
@@ -75,8 +74,11 @@
         </span>
         <div class="p-4 border-purple-600/20 border-t-[1px] md:border-t-0 md:grow md:basis-0" x-cloak>
             <h2 class="text-center mb-4 w-full " style="animation-fill-mode: forwards;"  x-show="!open" x-transition:enter.delay.0ms x-transition:enter.duration.1000ms x-transition:leave.delay.0ms x-transition:leave.duration.0ms>Select a project to learn more.</h2>
-            <span class="" x-show="open" x-transition:enter.duration.1001ms >
-                <h2 class="text-center" x-text="selected.name"></h2>
+            <span x-show="open" x-transition:enter.duration.1001ms>
+                <span class="flex flex-row justify-evenly">
+                    <h2 class="text-center grow basis-1" x-text="selected.name"></h2>
+                    <div class="underline hoverGrow cursor-pointer" x-show="open" x-transition:enter.duration.500ms x-transition:enter.delay.500ms  @click="open=false;">[x]</div>
+                </span>
                 <span x-show="selected.id==1" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>I built this app using React to render the pages. For the location autocomplete, I used the Google Places API, which gives suggested complete addresses based on the user input. Once the user enters or selects a complete address, a call to the Google Solar API fetches placement data for the building.</span>
                 <span x-show="selected.id==2" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>This was made using Django on the backend. The "batteries-included" design philosphy of Django makes account creation, password handling, and database queries a simple task. I also used Django's templating system to render pages.</span>
                 <span x-show="selected.id==3" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>I built this project using the Unity Game Engine, which abstracts many difficult problems such as physics and graphics rendering. For a networking solution, I used Unity's Netcode for Game Objects.</span>
@@ -84,6 +86,7 @@
                 </span>
             </span>
         </div>
+        
     </div> 
     <footer class="text-purple-800 text-xs px-6 mt-4 md:mb-4 h-full w-full">
         <div class="invisible slideFade align-text-bottom" style="animation-delay: 5s; animation-fill-mode: forwards;"> 
