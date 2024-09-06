@@ -1213,4 +1213,8 @@ video {
   .min-\[1800px\]\:pt-16 {
     padding-top: 4rem;
   }
+
+  .min-\[1800px\]\:text-center {
+    text-align: center;
+  }
 }
