@@ -610,6 +610,14 @@ video {
   margin-top: 1.25rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .flex {
   display: flex;
 }
@@ -876,6 +884,10 @@ video {
   padding-top: 1rem;
 }
 
+.pb-12 {
+  padding-bottom: 3rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -892,6 +904,21 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-purple-800 {
@@ -1082,12 +1109,24 @@ video {
     margin-bottom: 1rem;
   }
 
+  .md\:mb-3 {
+    margin-bottom: 0.75rem;
+  }
+
+  .md\:mb-1 {
+    margin-bottom: 0.25rem;
+  }
+
   .md\:h-24 {
     height: 6rem;
   }
 
   .md\:h-screen {
     height: 100vh;
+  }
+
+  .md\:h-\[66\%\] {
+    height: 66%;
   }
 
   .md\:min-h-96 {
