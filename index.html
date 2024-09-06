@@ -54,18 +54,20 @@
                     <p class="invisible text-pretty pt-1 slideFade" style="animation-delay: 2s; animation-fill-mode: forwards;">Please see my <a class="underline" href="./projects.html">projects</a> page for info on some things I've worked on. I've tried to use different technologies for each project, in order to gain a wider base of knowledge.</p>
                     <div class="mt-5 mb-10 w-full h-full" x-data="{ technologies: [
                         {name: 'JavaScript', icon: './icons/technologies/icon_js.png', id: 1},
+                        {name: 'C#', icon: './icons/technologies/icon_csharp.png', id: 0},  
+                        {name: 'Python', icon:'./icons/technologies/icon_python.png', id: 7},
                         {name: 'HTML5', icon: './icons/technologies/icon_html5.png', id: 2},
                         {name: 'React', icon: './icons/technologies/icon_react.png', id: 3},
                         {name: 'Node.JS', icon: './icons/technologies/icon_node.png', id: 4},
+                        {name: 'Django', icon: './icons/technologies/icon_django.png', id: 8},
                         {name: 'Tailwind CSS', icon: './icons/technologies/icon_tailwind.png', id: 5},
-                        {name: 'C#', icon: './icons/technologies/icon_csharp.png', id: 0},  
                         {name: 'Unity', icon: './icons/technologies/icon_unity.png', id: 6},  
                     ]
                 }"> 
                         <h1 class="invisible text-center slideFade 2xl:pt-8" style="animation-delay: 4s; animation-fill-mode: forwards;">Some of my favorite technologies</h1>
                         <div class="flex-wrap flex justify-around mx-3 2xl:pt-8">
                             <template x-for="technology in technologies" :key="technology.id">
-                                    <img class="bg-white/40 rounded-full mt-4 pureFade h-[50px] min-h-[50px] w-[50px] min-w-[50px] mx-3 p-1 " :alt="technology.name" :src="technology.icon">
+                                    <img class="bg-white/40 rounded-full mt-4 pureFade h-[50px] min-h-[50px] w-[50px] min-w-[50px] mx-2 p-1" :title="technology.name" :alt="technology.name" :src="technology.icon">
                             </template>
                         </div>
                     </div>
