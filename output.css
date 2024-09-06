@@ -698,12 +698,20 @@ video {
   flex-basis: 0px;
 }
 
+.basis-1 {
+  flex-basis: 0.25rem;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
 
 .snap-center {
   scroll-snap-align: center;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -732,6 +740,10 @@ video {
 
 .justify-around {
   justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
 }
 
 .truncate {
@@ -1066,10 +1078,6 @@ video {
     margin-right: 15rem;
   }
 
-  .md\:mb-12 {
-    margin-bottom: 3rem;
-  }
-
   .md\:mb-4 {
     margin-bottom: 1rem;
   }
@@ -1154,10 +1162,6 @@ video {
 
   .\32xl\:max-h-\[804px\] {
     max-height: 804px;
-  }
-
-  .\32xl\:w-\[66\%\] {
-    width: 66%;
   }
 
   .\32xl\:max-w-\[600px\] {
