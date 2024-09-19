@@ -13,7 +13,7 @@
 
 </head>
 <body class="flex flex-col md:h-screen m-0 text-white bg-fixed
-            bg-gradient-to-tl from-indigo-950 via-pink-950 via-10% to-purple-950 to-100% background-animate"
+            bg-gradient-to-tl from-blue-500 via-indigo-900 via-10% to-purple-900 to-100% background-animate"
             x-data="{ scrollOpacity : '' }" @scroll.window.throttle.100ms = "if (window.scrollY > 100) {scrollOpacity = 'scrollOpacity';} else {scrollOpacity = ''}">
     <header class="text-white/70 flex justify-around items-center sticky top-0 z-50 pb-1 border-b-[1px] border-b-purple-600/40" :class="scrollOpacity">
         <nav>
@@ -42,7 +42,7 @@
     <div class="flex flex-col-reverse h-full md:h-24 md:min-h-96 md:flex-row md:mx-6 md:pt-6 min-[1800px]:w-[66%]" x-data="{ selected: false, open : false,
         project_list: [{name:'Solar Power Search', link:'https://github.com/ben-martin1/rayrater', id:1},
                     {name:'Talent Agency Management System', link:'https://github.com/ben-martin1/enterlinked', id:2},
-                    {name:'Online Multiplayer First Person Shooter Game', link:'https://github.com/ben-martin1/fallen-lands', id:3},
+                    {name:'Online Multiplayer FPS Game', link:'https://github.com/ben-martin1/fallen-lands', id:3},
                     {name:'This site', link:'https://github.com/ben-martin1/portfolio', id:4},
                     ]}">
         <div class="p-4 grow basis-0 border-purple-600/20 border-t-[1px] md:border-t-0 md:border-r-[1px]">
@@ -50,7 +50,7 @@
             <template x-for="project in project_list" :key="project.id">
                 <div class="flex min-h-9 items-center slideFade">
                     <a :href="project.link" target="_blank"><img src="./icons/icons8-github-48.png" class="h-6 min-w-6 mx-2 "></a>
-                    <span class=" h-full w-full hoverGrow truncate hover:underline cursor-pointer" @click="selected=project; open=true;">
+                    <span class="h-full w-full hoverGrow truncate hover:underline cursor-pointer" :class="(selected == project) ? 'font-bold':''" @click="selected=project; open=true;">
                         <span class="pl-1" x-text="project.name"></span>
                     </span>
                 </div>
@@ -58,7 +58,7 @@
         </div>
         <span class="p-4 grow basis-0 border-purple-600/20 border-t-[1px] md:border-t-0 md:border-r-[1px] h-full" x-cloak x-show="open" x-transition:enter.duration.500ms>
             <div class="flex justify-around">
-                <h2 class="text-center basis-1 grow mb-1 text-lg">About</h2>
+                <h2 class="text-center basis-1 grow mb-1 text-lg">About this project</h2>
                 <div class="underline hoverGrow cursor-pointer" x-show="open" x-transition:enter.duration.500ms x-transition:enter.delay.500ms  @click="open=false;">[x]</div>
             </div>
             <span x-show="selected.id==1" x-transition:enter.duration.550ms  >
@@ -67,18 +67,21 @@
             <span x-show="selected.id==2" x-transition:enter.duration.550ms >
                 <p class="text-pretty">This app follows the basic functions of a management system for a talent agency, including keeping track of representatives and contact info. <br> Instead of the industry standard of having the agency enter talent info directly, I built this system to have talent maintain ownership of their account, regardless of who is representing them.</p>
             </span>
-            <span x-show="selected.id==3" x-transition:enter.duration.550ms >This is a test demo for a co-op FPS game. I built basic features such as movement, jumping, shooting, destructable objects, and a procedural weapon creation system. Data is synced over network for a peer-to-peer experience. The game was designed to be server-authoritative using RPCs in order to prevent potential cheating.</span>
+            <span x-show="selected.id==3" x-transition:enter.duration.550ms >This is a test demo for a co-op First Person Shooter game. I built basic features such as movement, jumping, shooting, destructable objects, and a procedural weapon creation system. Data is synced over network for a peer-to-peer experience. The game was designed to be server-authoritative using RPCs in order to prevent potential cheating.</span>
             <span x-show="selected.id==4" x-transition:enter.duration.550ms >As a student looking to transition into software development, many job applications ask about a portfolio site. I hope this helps move the needle towards a yes!</span>
         </span>
         <span class="p-4 md:grow md:basis-0 " x-cloak x-show="!open" x-transition:enter.scale.0 x-transition:enter.duration.1505ms>
         </span>
         <div class="p-4 border-purple-600/20 border-t-[1px] md:border-t-0 md:grow md:basis-0" x-cloak>
-            <h2 class="text-center mb-4 w-full text-lg" style="animation-fill-mode: forwards;"  x-show="!open" x-transition:enter.delay.0ms x-transition:enter.duration.1000ms x-transition:leave.delay.0ms x-transition:leave.duration.0ms>
+            <h2 class="text-center mb-4 w-full text-lg bg" style="animation-fill-mode: forwards;"  x-show="!open" x-transition:enter.delay.0ms x-transition:enter.duration.1000ms x-transition:leave.delay.0ms x-transition:leave.duration.0ms>
                 Select a project to learn more.
             </h2>
             <span x-show="open" x-transition:enter.duration.1001ms>
                 <span class="flex flex-row justify-evenly">
-                    <h2 class="text-center grow basis-1 mb-1 text-lg" x-text="selected.name"></h2>
+                    <h2 class="text-center grow basis-1 mb-1 text-lg">
+                        <span>Stack for </span>
+                        <span x-text="selected.name"></span>
+                    </h2>
                     <div class="underline hoverGrow cursor-pointer" x-show="open" x-transition:enter.duration.500ms x-transition:enter.delay.500ms  @click="open=false;">[x]</div>
                 </span>
                 <span x-show="selected.id==1" x-transition:enter.duration.600ms x-transition:enter.delay.250ms>I built this app using React to render the pages. For the location autocomplete, I used the Google Places API, which gives suggested complete addresses based on the user input. Once the user enters or selects a complete address, a call to the Google Solar API fetches placement data for the building.</span>
