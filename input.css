@@ -58,11 +58,11 @@
         }
     }
     ::-moz-selection {
-      color: rgb(181, 61, 155);
+      color: rgb(165, 180, 262);
       background: black;
     }
     ::selection {
-      color: rgb(181, 61, 155);
+      color: rgb(165, 180, 262);
       background: black;
     }
     .background-animate {
