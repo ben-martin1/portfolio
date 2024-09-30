@@ -17,7 +17,7 @@
         x-data="{ scrollOpacity : '' }" @scroll.window.throttle.100ms = "if (window.scrollY > 100) {scrollOpacity = 'scrollOpacity';} else {scrollOpacity = ''}">
         <header class="text-white/70 flex justify-around items-center sticky top-0 z-50 pb-1 border-b-[1px] border-b-purple-600/40" :class="scrollOpacity">
             <nav>
-                <a class="flex items-center hover:underline hoverGrow" href="./index.html">
+                <a class="flex items-center hover:underline hoverGrow" href="./">
                     <img src="./icons/icon_house_white.png">
                     <div>Home</div>
                 </a>
@@ -48,12 +48,12 @@
             </div>
             <span></span>
         </div>
-        <footer class="text-purple-800 text-xs px-6 mt-4 w-full">
-            <div class="invisible slideFade" style="animation-delay: 5s; animation-fill-mode: forwards;"> 
-                Designed by Ben Martin. Icons from <a href='https://icons8.com/'>icons8</a>
-            </div>
-        </footer>
     </section>
+    <footer class="text-purple-800 text-xs px-6 mt-4 w-full">
+        <div class="invisible slideFade" style="animation-delay: 5s; animation-fill-mode: forwards;"> 
+            Designed by Ben Martin. Icons from <a href='https://icons8.com/'>icons8</a>
+        </div>
+    </footer>
 </body>
 </html>
 
